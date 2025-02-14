@@ -1,0 +1,74 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container to position everything absolutely for the "No" button */
+.valentine-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffafcc, #ffcad4);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.valentine-title {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* The row for the two buttons */
+.buttons-row {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Yes button styling */
+.yes-button {
+  position: absolute;
+  top: 57%;
+  left: 40%;
+  background-color: #ff77a9;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  transform-origin: center;
+}
+
+.yes-button:hover {
+  transform: scale(1.4);
+}
+
+/* No button starts absolute so it doesn't "teleport" on the first move */
+.no-button {
+  position: absolute;
+  top: 60%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  background-color: #b20b37;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: top 0.4s ease-in-out, left 0.4s ease-in-out;
+}
+
+.no-button:hover {
+  background-color: #c71536;
+}

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+.yes-page-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffafcc, #ffcad4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* The container for the falling hearts */
+.heart-rain-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* So clicks go through to whatever's behind */
+}
+
+/* Each heart is absolutely positioned, starts near top (y= -10%), 
+   then moves to bottom (y= 110%). 
+*/
+.falling-heart {
+  position: absolute;
+  top: -10%; /* Start just above the viewport */
+  font-size: 2rem; /* size of heart emojis */
+  user-select: none;
+  /* Animate the "fall" using keyframes defined below */
+  animation-name: heartFall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; /* Keep them falling repeatedly or set to 1 if you want them to fall once */
+}
+
+/* The actual falling animation */
+@keyframes heartFall {
+  0% {
+    top: -10%;
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    top: 110%;
+    opacity: 0;
+  }
+}
+
+/* Fancy "I love you" text */
+.love-message {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  z-index: 1; /* Appear above the hearts, which are behind it */
+}
+
+/* Return button */
+.return-button {
+  background-color: #ff77a9;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  z-index: 1; /* Appear above hearts */
+}
+
+.return-button:hover {
+  transform: scale(1.1);
+}
